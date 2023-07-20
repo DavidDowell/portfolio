@@ -1,7 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-primary: "Julius Sans One";
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Signika', 'Girassol', 'Julius Sans One'
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,4 +18,66 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.main-font {
+  font-family: var(--font-primary);
+}
+
+#App {
+  height: 100vh;
+}
+
+.Home {
+  color: whitesmoke;
+  height: inherit;
+  width: 70vw;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: right 3px;
+  border-radius: 4px;
+  transition: background-image 1s ease;
+}
+
+.modes {
+  transform: rotate(270deg);
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 7%;
+  left: 12%;
+  transform-origin: top left;
+}
+
+.date {
+  font-weight: 600;
+  position: absolute;
+  padding: 2px;
+  top: 1%;
+  right: 15%;
+  transform-origin: top right;
+}
+
+.dark {
+  /* background-image: linear-gradient(to right, #b7faff, #d8b7ff, #b7faff); */
+  background-image: linear-gradient(to right, #4d4d4d, #7e7e7e, #cfcfcf, #4d4d4d);
+  background-size: 200% 100%;
+  animation: gradientAnimation 7s linear infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 200%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.light {
+  /* Light mode gradient */
+  background-image: linear-gradient(to right, #fffd93, #ff7f3f, #ffbe28, #fffd93);
+  background-size: 200% 100%;
+  animation: gradientAnimation 7s linear infinite;
 }
